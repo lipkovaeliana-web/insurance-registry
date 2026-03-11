@@ -1,5 +1,5 @@
 class Pojisteny():
-"""drží jednoho pojištěného"""
+#drží jednoho pojištěného
     def __init__(self, jmeno, prijmeni, vek, telefon):
         self.jmeno = jmeno
         self.prijmeni = prijmeni
