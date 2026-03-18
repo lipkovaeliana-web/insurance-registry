@@ -1,18 +1,25 @@
-from pojisteny import Pojisteny
+# Eviduje seznam pojištěných.
 class Evidence:
-#Eviduje seznam pojištěných
+
     def __init__(self):
         self.pojistenci = []
 
-    def pridej_pojisteneho(self, pojisteny): #přidává nového pojištěnce
+    # Přidá nového pojištěného do evidence.
+    def pridej_pojisteneho(self, pojisteny):
         self.pojistenci.append(pojisteny)
 
-    def vypis_vsechny(self): # vypisuje seznam všech pojištěnců
+    # Vrátí seznam všech pojištěných v evidenci.
+    def vypis_vsechny(self):
         return self.pojistenci
 
-    def vyhledej_pojisteneho(self, jmeno, prijmeni): #vyhledává v seznamu pojištěných podle jména a příjmení
+    # Vyhledá pojištěného podle jména a příjmení (nezávisle na velikosti písmen).
+    def vyhledej_pojisteneho(self, jmeno, prijmeni):
         for pojisteny in self.pojistenci:
-            if pojisteny.jmeno == jmeno and pojisteny.prijmeni == prijmeni:
+            if pojisteny.jmeno.lower() == jmeno.lower() and pojisteny.prijmeni.lower() == prijmeni.lower():
                 return pojisteny
+        return None
 
+    # Zjistí, zda je seznam pojištěných prázdný.
+    def je_prazdna(self):
+        return len(self.pojistenci) == 0
 
